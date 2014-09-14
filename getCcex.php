@@ -10,7 +10,8 @@ $array = [];
 foreach ($json as $value => $element) {
 	foreach($element as $valuer => $elementer) { 
 		if ($valuer == 'lastprice') {		
-			array_push($array, array($value => "$elementer"));
+			$rounded = number_format($elementer, 8, '.', ' ');
+			array_push($array, array($value => "$rounded"));
 		}
 	}
 }
